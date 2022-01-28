@@ -27,6 +27,7 @@
 
 <!--  TABLA CON LOS DATOS-->
 
+
 <div class="col-md-7">
 <table class= "table table-bordered table-hover">
 
@@ -42,6 +43,19 @@
     <tbody>
 
 <!--  TABLA CON LOS DATOS-->
+
+<% for (let i=0; i<tasks.length; i++) { %>
+  <tr>
+    
+    <th><%= i+1 %></th>
+    <th><%= tasks[i].title%></th>
+    <th><%= tasks[i].description%></th>
+    <td>
+
+      <a href="/turn/<%= tasks[i]._id %>" class = "<%= tasks[i].status ? 'btn btn-success' : 'btn btn-dark'%>"></a>
+      <a href="/delete/<%= tasks[i]._id%>"
+    </td>
+</tr>
 
     </tbody>
 </table>
